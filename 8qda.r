@@ -2,7 +2,7 @@
 
 library(MASS)
 library(ggplot2)
-titanicDS = read.csv("data/titanic.csv")
+titanicDS = read.csv("titanic.csv")
 dim(titanicDS)
 
 str(titanicDS)
