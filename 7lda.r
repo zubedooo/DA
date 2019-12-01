@@ -5,7 +5,7 @@
 # install.packages('rgdal', repos='http://r.findata.org')
 library(flipMultivariates)
 
-vehicles <- read.csv('data/vehicles.csv')
+vehicles <- read.csv('vehicles.csv')
 lda <- LDA(class ~ ., data = vehicles)
 
 # lda
