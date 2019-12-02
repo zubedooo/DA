@@ -1,11 +1,5 @@
-library(digest) # https://cran.r-project.org/web/packages/digest/digest.pdf
-library(bit)    # https://cran.r-project.org/web/packages/bit/bit.pdf
-
-# https://llimllib.github.io/bloomfilter-tutorial/
-# https://github.com/rstudio/shiny-examples/blob/master/087-crandash/bloomfilter.R
-
-# https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
-# Translation of above python script
+library(digest)
+library(bit)
 
 BloomFilter <- setRefClass("BloomFilter",
                            fields = list(
