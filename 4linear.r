@@ -1,4 +1,3 @@
-setwd("C:\\Users\\Dhanushguntha\\Desktop\\dalabpractice")
 lr<-read.csv("lr.csv",header=TRUE,sep=",")
 lr
 budget <-mean(lr$budget)
