@@ -1,5 +1,3 @@
-setwd("C:\\Users\\Dhanushguntha\\Desktop\\dalabpractice")
-
 lr=read.csv("sales.csv",header = TRUE,sep = ',')
 
 lr
