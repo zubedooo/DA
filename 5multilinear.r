@@ -1,27 +1,22 @@
-ad = read.csv("p5.csv")
+df=read.csv('lr.csv')
 
-mlr <- function(x, y) {
-  beta_hat <- solve(t(x) %*% x) %*% t(x) %*% y
-  y_hat = x %*% beta_hat
-  
-  X = x - mean(x)
-  Y = y - mean(y)
-  
-  e = y - y_hat
-  rss = sum(e^2)
-  tss = sum(Y^2)
-  
-  R_squared = 1 - rss/tss
-  
-  RSE = sqrt(rss / (length(x) - 2))
-  
-  # corr = sum (X * Y) / sqrt( sum(X^2) *  sum(Y^2) )
-  cat(rss, '\n', tss, '\n', R_squared, '\n', RSE, '\n')
-}
+#Y=m0 + m1x1+m2x2...
 
-X = as.matrix(cbind(1, ad$TV, ad$radio, ad$newspaper))
-y = as.matrix(ad$sales)
-beta_hat = mlr(X, y)
+mean_tv=mean(df$TV)
+mean_sales=mean(df$Sales)
+m1=sum((df$TV-mean_tv)*(df$Sales-mean_sales))/sum((df$TV-mean_tv)**2)
 
-mod1 <- lm(sales ~ ., data = ad)
-?"%*%"
+m1
+mean_radio=mean(df$Radio)
+m2=sum((df$Radio-mean_radio)*(df$Sales-mean_sales))/sum((df$Radio-mean_radio)**2)
+m0=mean_sales-m1*mean_tv-m2*mean_radio
+m2
+m0
+df$pred=m0+m1*df$TV+m2*df$Radio
+
+#prebuilt
+m0
+m1
+m2
+lin_model=lm(Sales~TV+Radio,data=df)
+lin_model
